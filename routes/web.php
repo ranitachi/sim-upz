@@ -23,3 +23,11 @@ Route::resource('muzzaki', 'MuzzakiController')->middleware('auth');
 Route::get('/muzzaki-data', 'MuzzakiController@data')->name('muzzaki.data')->middleware('auth');
 Route::get('/muzzaki-form/{id}', 'MuzzakiController@form')->name('muzzaki.form')->middleware('auth');
 Route::get('/muzzaki-status/{id}/{st}', 'MuzzakiController@status')->name('muzzaki.status')->middleware('auth');
+
+//ini bagian master data
+Route::resource('akun', 'UsersController');
+Route::resource('amilin', 'AmilinController');
+Route::resource('muzzaki', 'MuzzakiController');
+Route::resource('jenis-zakat', 'JeniszakatController');
+Route::resource('jenis-infak', 'JenisinfakController');
+Route::resource('jenis-mustahik', 'MustahikController');

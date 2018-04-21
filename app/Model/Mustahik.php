@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Mustahik extends Model
 {
     use SoftDeletes;
-    private $table='mustahik';
+    //private $table='mustahik';
+    protected $table='mustahik';
     private $protected = 'deleted_at';
-    private $fillable = ['kode','nama','alamat','provinsi_id','kabupaten_kota_id','kecamatan_id','kelurahan_id','kodepos','gender','no_indentitas','jenis_identitas','tempat_lahir','tanggal_lahir','asnaf_id','flag','desc','created_at','updated_at'];
+    //private $fillable = ['kode','nama','alamat','provinsi_id','kabupaten_kota_id','kecamatan_id','kelurahan_id','kodepos','gender','no_indentitas','jenis_identitas','tempat_lahir','tanggal_lahir','asnaf_id','flag','desc','created_at','updated_at'];
+    protected $fillable = ['kode','nama','alamat','provinsi_id','kabupaten_kota_id','kecamatan_id','kelurahan_id','kodepos','gender','no_indentitas','jenis_identitas','tempat_lahir','tanggal_lahir','asnaf_id','flag','desc','created_at','updated_at'];
 
     public function asnaf()
     {

@@ -61,10 +61,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> Akun</a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> Jenis Zakat</a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> Jenis Infak</a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> Jenis Mustahik</a></li>
+            <li><a href="akun"><i class="fa fa-circle-o text-aqua"></i> Akun</a></li>
+            <li><a href="amilin"><i class="fa fa-circle-o text-aqua"></i> Amilin</a></li>
+            <li><a href="muzzaki"><i class="fa fa-circle-o text-aqua"></i> Muzaki</a></li>
+            <li><a href="jenis-zakat"><i class="fa fa-circle-o text-aqua"></i> Jenis Zakat</a></li>
+            <li><a href="jenis-infak"><i class="fa fa-circle-o text-aqua"></i> Jenis Infak</a></li>
+            <li><a href="jenis-mustahik"><i class="fa fa-circle-o text-aqua"></i> Jenis Mustahik</a></li>
           </ul>
         </li>
         

@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Model\Jeniszakat;
 use Illuminate\Http\Request;
 
-class JeniszakatController extends Controller
+class JenisinfakController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $data= Jeniszakat::where('kategori','zakat')->get();
-        return view('pages.jenisZakat.index',compact('data'));
+        $data= Jeniszakat::where('kategori','infak')->get();
+        return view('pages.jenisInfak.index',compact('data'));
     }
 
     /**
@@ -34,10 +39,10 @@ class JeniszakatController extends Controller
         $datas = new Jeniszakat();
         $datas->kode = $request->kode;
         $datas->jenis = $request->jenis;
-        $datas->kategori = "zakat";
+        $datas->kategori = "infak";
         $datas->desc = $request->desc;
         $datas->save();
-        return redirect()->route('jenis-zakat.index')->with('alert-success','Berhasil Menambahkan Data Jenis Zakat!');
+        return redirect()->route('jenis-infak.index')->with('alert-success','Berhasil Menambahkan Data Jenis Infak!');
     }
 
     /**
@@ -75,10 +80,10 @@ class JeniszakatController extends Controller
         $datas = Jeniszakat::where('id', $ids)->first();
         $datas->kode = $request->kode;
         $datas->jenis = $request->jenis;
-        $datas->kategori = "zakat";
+        $datas->kategori = "infak";
         $datas->desc = $request->desc;
         $datas->save();
-        return redirect()->route('jenis-zakat.index')->with('alert-success','Berhasil mengupdate Data Jenis Zakat!');
+        return redirect()->route('jenis-infak.index')->with('alert-success','Berhasil mengupdate Data Jenis Infak!');
     }
 
     /**

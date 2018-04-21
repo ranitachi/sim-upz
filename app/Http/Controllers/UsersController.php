@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Jeniszakat;
+use App\User;
 use Illuminate\Http\Request;
 
-class JeniszakatController extends Controller
+class UsersController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $data= Jeniszakat::where('kategori','zakat')->get();
-        return view('pages.jenisZakat.index',compact('data'));
+        $data=User::all();
+        return view('pages.akun.index',compact('data'));
     }
 
     /**
@@ -31,13 +36,16 @@ class JeniszakatController extends Controller
      */
     public function store(Request $request)
     {
-        $datas = new Jeniszakat();
-        $datas->kode = $request->kode;
-        $datas->jenis = $request->jenis;
-        $datas->kategori = "zakat";
-        $datas->desc = $request->desc;
+        $name = $request->nama;
+        $email = $request->email;
+        $password = $request->password;
+
+        $datas = new User();
+        $datas->name = $name;
+        $datas->email = $email;
+        $datas->password = $password;
         $datas->save();
-        return redirect()->route('jenis-zakat.index')->with('alert-success','Berhasil Menambahkan Data Jenis Zakat!');
+        return redirect()->route('akun.index')->with('alert-success','Berhasil Menambahkan Data Akun!');
     }
 
     /**
@@ -71,14 +79,12 @@ class JeniszakatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ids = $request->id;
-        $datas = Jeniszakat::where('id', $ids)->first();
-        $datas->kode = $request->kode;
-        $datas->jenis = $request->jenis;
-        $datas->kategori = "zakat";
-        $datas->desc = $request->desc;
+        $ids = $request->ids;
+        $datas = User::where('id',$ids)->first();
+        $datas->name = $request->nama;
+        $datas->email = $request->email;
         $datas->save();
-        return redirect()->route('jenis-zakat.index')->with('alert-success','Berhasil mengupdate Data Jenis Zakat!');
+        return redirect()->route('akun.index')->with('alert-success','Berhasil di Update Data Akun!');
     }
 
     /**
@@ -89,8 +95,8 @@ class JeniszakatController extends Controller
      */
     public function destroy($id)
     {
-        $datas = Jeniszakat::where('id', $id)->first();
+        $datas = User::where('id',$id)->first();
         $datas->delete();
-        return redirect()->route('jenis-zakat.index')->with('alert-success','Berhasil Menghapus Data Jenis Zakat!');
+        return redirect()->route('akun.index')->with('alert-success','Berhasil Menghapus Data Akun!');
     }
 }
