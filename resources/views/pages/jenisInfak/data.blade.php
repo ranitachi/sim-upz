@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h2>Table Data Jenis Zakat</h2>
+    <h2>Table Data Jenis Infak</h2>
     <hr>
     <table class="table">
         <thead class="table-primary">

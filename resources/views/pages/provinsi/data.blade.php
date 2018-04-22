@@ -1,13 +1,11 @@
 <div class="container-fluid">
-    <h2>Table Data Akun</h2>
+    <h2>Table Data Provinsi</h2>
     <hr>
     <table class="table">
         <thead class="table-primary">
         <tr>
             <th>ID</th>
             <th>name</th>
-            <th>Email</th>
-            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -15,12 +13,11 @@
             <tr>
                 <th>{{ $datas->id }}</th>
                 <th>{{ $datas->name }}</th>
-                <th>{{ $datas->email }}</th>
                 <td>
-                    <form action="{{ route('akun.destroy', $datas->id) }}" method="POST">
+                    <form action="{{ route('provinsi.destroy', $datas->id) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <a href="#" name="btnEdit" id="btnEdit" data-toggle="modal" data-target="#exampleModal" data-names="{{$datas->name}}" data-emails="{{$datas->email}}" data-ids="{{$datas->id}}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="#" name="btnEdit" id="btnEdit" data-toggle="modal" data-target="#exampleModal" data-names="{{$datas->name}}" data-ids="{{$datas->id}}" class="btn btn-sm btn-primary">Edit</a>
                         <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')">Delete</button>
                     </form>
                 </td>
@@ -40,17 +37,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('akun.update', 1) }}" method="POST">
+                <form action="{{ route('provinsi.update', 1) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
                     <input type="hidden" readonly="readonly" class="form-control id" name="ids" required="required">
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control name" name="nama" required="required">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control email" name="email" required="required">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-md btn-primary">Update</button>

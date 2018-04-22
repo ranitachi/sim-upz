@@ -31,13 +31,13 @@
           
         </li>
         <li class="">
-          <a href="{{URL::to('/')}}"><i class="fa fa-user-secret"></i> <span>Data Muzzaki</span></a>
+          <a href="muzzaki"><i class="fa fa-user-secret"></i> <span>Data Muzzaki</span></a>
         </li>
         <li class="">
-          <a href="{{URL::to('/')}}"><i class="fa fa-users"></i> <span>Data Mustahik</span></a>
+          <a href="jenis-mustahik"><i class="fa fa-users"></i> <span>Data Mustahik</span></a>
         </li>
         <li class="">
-          <a href="{{URL::to('/')}}"><i class="fa fa-th-large"></i> <span>Data UPZ</span></a>
+          <a href="upz"><i class="fa fa-th-large"></i> <span>Data UPZ</span></a>
         </li>
         <li class="treeview">
           <a href="#">
@@ -63,10 +63,14 @@
           <ul class="treeview-menu">
             <li><a href="akun"><i class="fa fa-circle-o text-aqua"></i> Akun</a></li>
             <li><a href="amilin"><i class="fa fa-circle-o text-aqua"></i> Amilin</a></li>
-            <li><a href="muzzaki"><i class="fa fa-circle-o text-aqua"></i> Muzaki</a></li>
+            <!--<li><a href="muzzaki"><i class="fa fa-circle-o text-aqua"></i> Muzaki</a></li>-->
             <li><a href="jenis-zakat"><i class="fa fa-circle-o text-aqua"></i> Jenis Zakat</a></li>
             <li><a href="jenis-infak"><i class="fa fa-circle-o text-aqua"></i> Jenis Infak</a></li>
-            <li><a href="jenis-mustahik"><i class="fa fa-circle-o text-aqua"></i> Jenis Mustahik</a></li>
+              <li><a href="provinsi"><i class="fa fa-circle-o text-aqua"></i> Provinsi</a></li>
+              <li><a href="kabupaten-kota"><i class="fa fa-circle-o text-aqua"></i> Kabupaten Kota</a></li>
+              <li><a href="kecamatan"><i class="fa fa-circle-o text-aqua"></i> Kecamatan</a></li>
+              <li><a href="kelurahan"><i class="fa fa-circle-o text-aqua"></i> Kelurahan</a></li>
+            <!--<li><a href="jenis-mustahik"><i class="fa fa-circle-o text-aqua"></i> Jenis Mustahik</a></li>-->
           </ul>
         </li>
         

@@ -3,10 +3,12 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-class Upz extends Model
+class Provinsi extends Model
 {
     //
-    private $table='provinsi';
-    private $fillable = ['name','created_at','updated_at'];
+    //private $table='provinsi';
+    //private $fillable = ['name','created_at','updated_at'];
+    protected $table='provinsi';
+    protected $fillable = ['name','created_at','updated_at'];
 
 }

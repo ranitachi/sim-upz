@@ -1,12 +1,12 @@
 <div class="container-fluid">
-    <h2>Table Data Akun</h2>
+    <h2>Table Data Kabupaten Kota</h2>
     <hr>
     <table class="table">
         <thead class="table-primary">
         <tr>
             <th>ID</th>
-            <th>name</th>
-            <th>Email</th>
+            <th>ID Provinsi</th>
+            <th>Nama</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -14,13 +14,13 @@
         @foreach($data as $datas)
             <tr>
                 <th>{{ $datas->id }}</th>
+                <th>{{ $datas->provinsi_id }}</th>
                 <th>{{ $datas->name }}</th>
-                <th>{{ $datas->email }}</th>
                 <td>
-                    <form action="{{ route('akun.destroy', $datas->id) }}" method="POST">
+                    <form action="{{ route('kabupaten-kota.destroy', $datas->id) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <a href="#" name="btnEdit" id="btnEdit" data-toggle="modal" data-target="#exampleModal" data-names="{{$datas->name}}" data-emails="{{$datas->email}}" data-ids="{{$datas->id}}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="#" name="btnEdit" id="btnEdit" data-toggle="modal" data-target="#exampleModal" data-names="{{$datas->name}}" data-provinsi="{{$datas->provinsi_id}}" data-ids="{{$datas->id}}" class="btn btn-sm btn-primary">Edit</a>
                         <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')">Delete</button>
                     </form>
                 </td>
@@ -40,17 +40,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('akun.update', 1) }}" method="POST">
+                <form action="{{ route('kabupaten-kota.update', 1) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
                     <input type="hidden" readonly="readonly" class="form-control id" name="ids" required="required">
                     <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control name" name="nama" required="required">
+                        <label for="idProvinsi">ID Provinsi</label>
+                        <input type="text" class="form-control idprovinsi" name="idprovinsi" required="required">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control email" name="email" required="required">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control name" name="nama" required="required">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-md btn-primary">Update</button>
@@ -68,12 +68,12 @@
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
         var name = button.data('names')
-        var email = button.data('emails')
+        var provinsi = button.data('provinsi')
         var id = button.data('ids')
         var modal = $(this)
 
         modal.find('.modal-body .name').val(name)
-        modal.find('.modal-body .email').val(email)
+        modal.find('.modal-body .idprovinsi').val(provinsi)
         modal.find('.modal-body .id').val(id)
     })
 </script>

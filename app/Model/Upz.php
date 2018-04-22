@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Upz extends Model
 {
-    //
     use SoftDeletes;
-    private $table='upz';
+    //private $table='upz';
+    protected $table='upz';
     private $protected = 'deleted_at';
-    private $fillable = ['kode','nama_upz','alamat','provinsi_id','kabupaten_kota_id','kecamatan_id','kelurahan_id','kodepos','pimpinan','no_telp','email','longitude','lattitude','website','flag','desc','created_at','updated_at'];
+    //private $fillable = ['kode','nama_upz','alamat','provinsi_id','kabupaten_kota_id','kecamatan_id','kelurahan_id','kodepos','pimpinan','no_telp','email','longitude','lattitude','website','flag','desc','created_at','updated_at'];
+    protected $fillable = ['kode','nama_upz','alamat','provinsi_id','kabupaten_kota_id','kecamatan_id','kelurahan_id','kodepos','pimpinan','no_telp','email','longitude','lattitude','website','flag','desc','created_at','updated_at'];
 
     public function provinsi()
     {

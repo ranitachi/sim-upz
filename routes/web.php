@@ -31,3 +31,8 @@ Route::resource('muzzaki', 'MuzzakiController');
 Route::resource('jenis-zakat', 'JeniszakatController');
 Route::resource('jenis-infak', 'JenisinfakController');
 Route::resource('jenis-mustahik', 'MustahikController');
+Route::resource('provinsi', 'ProvinsiController');
+Route::resource('kabupaten-kota', 'KabupatenkotaController');
+Route::resource('kecamatan', 'KecamatanController');
+Route::resource('kelurahan', 'KelurahanController');
+Route::resource('upz', 'UpzController');
